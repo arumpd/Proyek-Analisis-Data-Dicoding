@@ -35,15 +35,15 @@ st.write(filtered_data)
 numeric_data = data.select_dtypes(include=['float64', 'int64'])
 correlation_matrix = numeric_data.corr()
 
+st.subheader('Heatmap of Correlation Between Variables')
 fig1 = plt.figure(figsize=(12, 8))
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
-plt.title('Heatmap of Correlation Between Variables')
 st.pyplot(fig1)
 
 # Trend of CO Concentration by Station and Year
+st.subheader('Trend of CO Concentration by Station and Year')
 fig2 = plt.figure(figsize=(10, 5))
 sns.lineplot(data, x="year", y="CO", hue="station", marker='o')
-plt.title('Trend of CO Concentration by Station and Year')
 plt.xlabel('Year')
 plt.ylabel('CO Concentration')
 plt.legend(title='Station', bbox_to_anchor=(1.05, 1), loc='upper left')
