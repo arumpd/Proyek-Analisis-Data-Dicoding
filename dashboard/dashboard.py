@@ -2,7 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
-from babel.numbers import format_currency
 
 sns.set(style='dark')
 
@@ -33,8 +32,10 @@ st.subheader('Filtered Data')
 st.write(filtered_data)
 
 # Heatmap of Correlation Between Variables
+numeric_data = data.select_dtypes(include=['float64', 'int64'])
+correlation_matrix = numeric_data.corr()
+
 plt.figure(figsize=(12, 8))
-correlation_matrix = data.corr()
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
 plt.title('Heatmap of Correlation Between Variables')
 st.pyplot()
