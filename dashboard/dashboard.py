@@ -34,7 +34,8 @@ st.write(filtered_data)
 
 # Heatmap of Correlation Between Variables
 plt.figure(figsize=(12, 8))
-sns.heatmap(data, annot=True, cmap='coolwarm', fmt=".2f")
+correlation_matrix = data.corr()
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
 plt.title('Heatmap of Correlation Between Variables')
 st.pyplot()
 
