@@ -41,8 +41,8 @@ st.pyplot(fig1)
 
 # Trend of CO Concentration by Station and Year
 st.subheader('Trend of CO Concentration by Station and Year')
-fig2 = plt.figure(figsize=(10, 5))
-sns.lineplot(data, x="year", y="CO", hue="station", marker='o')
+fig2, ax = plt.subplots(figsize=(10, 5))
+sns.lineplot(data, x="year", y="CO", hue="station", marker='o', linewidth=2)
 plt.xlabel('Year')
 plt.ylabel('CO Concentration')
 plt.legend(title='Station', bbox_to_anchor=(1.05, 1), loc='upper left')
