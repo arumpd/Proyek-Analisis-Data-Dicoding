@@ -1,4 +1,4 @@
-# Dicoding Collection Dashboard ✨
+# Proyek Analisis Data Dicoding
 
 ## Setup environment
 ```
