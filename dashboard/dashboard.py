@@ -32,8 +32,7 @@ st.subheader('Filtered Data')
 st.write(filtered_data)
 
 # Heatmap of Correlation Between Variables
-numeric_data = data.select_dtypes(include=['float64', 'int64'])
-correlation_matrix = numeric_data.corr()
+correlation_matrix = data[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3', 'TEMP', 'PRES', 'DEWP', 'RAIN', 'WSPM']].corr()
 
 st.subheader('Heatmap of Correlation Between Variables')
 fig1 = plt.figure(figsize=(12, 8))
