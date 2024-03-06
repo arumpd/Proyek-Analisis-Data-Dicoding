@@ -7,12 +7,7 @@ from babel.numbers import format_currency
 sns.set(style='dark')
 
 # Load data
-@st.cache_data
-def load_data():
-    data = pd.read_csv("all_data.csv")  # Ganti "nama_file.csv" dengan nama file CSV Anda
-    return data
-
-data = load_data()
+data = pd.read_csv("dashboard/all_data.csv")
 
 # Main title
 st.title('Air Quality in China')
